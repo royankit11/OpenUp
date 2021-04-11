@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/mint"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hammersmithone"
+        android:text="Create an account"
+        android:layout_gravity="center"
+        android:textColor="@color/navy"
+        android:layout_marginTop="60dp"
+        android:textSize="40sp" />
+
+    <EditText
+        android:id="@+id/txtfName"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:background="@drawable/loginbox"
+        android:fontFamily="@font/hammersmithone"
+        android:hint="@string/FirstName"
+        android:inputType="text"
+        android:paddingEnd="15dp"
+        android:layout_gravity="center"
+        android:paddingTop="5dp"
+        android:paddingStart="15dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/navy"
+        android:textColorHint="@color/navy"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/txtlName"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="5dp"
+        android:inputType="text"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:hint="@string/LastName"
+        android:textColor="@color/navy"
+        android:textColorHint="@color/navy"
+        android:textSize="25sp"
+        android:fontFamily="@font/hammersmithone"
+        android:background="@drawable/loginbox"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hammersmithone"
+        android:text="*You may wish to remain anonymous"
+        android:layout_gravity="center"
+        android:textColor="@color/navy"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/txtUsername"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="5dp"
+        android:inputType="text"
+        android:hint="@string/Username"
+        android:textColor="@color/navy"
+        android:textColorHint="@color/navy"
+        android:textSize="25sp"
+        android:fontFamily="@font/hammersmithone"
+        android:background="@drawable/loginbox"/>
+
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="5dp"
+        android:inputType="textPassword"
+        android:hint="@string/Password"
+        android:textColor="@color/navy"
+        android:textColorHint="@color/navy"
+        android:textSize="25sp"
+        android:fontFamily="@font/hammersmithone"
+        android:background="@drawable/loginbox"/>
+
+    <EditText
+        android:id="@+id/txtPasswordConfirm"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="5dp"
+        android:inputType="textPassword"
+        android:hint="@string/PasswordConfirm"
+        android:textColor="@color/navy"
+        android:textColorHint="@color/navy"
+        android:textSize="25sp"
+        android:fontFamily="@font/hammersmithone"
+        android:background="@drawable/loginbox"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/hammersmithone"
+            android:textColor="#4dc484"
+            android:text="Save"
+            android:onClick="registerNewUser"
+            android:paddingTop="5dp"
+            android:layout_marginStart="40dp"
+            android:textAlignment="center"
+            android:textSize="35sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/hammersmithone"
+            android:textColor="#4dc484"
+            android:text="Cancel"
+            android:onClick="backToLogin"
+            android:layout_marginStart="20dp"
+            android:paddingTop="5dp"
+            android:textAlignment="center"
+            android:textSize="35sp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
