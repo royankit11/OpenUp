@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.openup.ui.home.RVAEvent;
 
@@ -34,9 +36,18 @@ public class RVAMessage extends RecyclerView.Adapter<RVAMessage.ViewHolder>{
         MessageData message = mData.get(position);
 
         if(message.getId().equals("Bot")) {
-            holder.mBotMessage.setText(mData.get(position).getMessage());
+            if(message.getMessage().length() > 25) {
+                holder.mBotMessage.setWidth(400);
+            }
+            holder.mBotMessage.setText(message.getMessage());
+            holder.mMessage.setVisibility(View.INVISIBLE);
         } else {
+            if(message.getMessage().length() > 25) {
+                holder.mMessage.setWidth(400);
+            }
             holder.mMessage.setText(message.getMessage());
+            holder.mBotMessage.setVisibility(View.INVISIBLE);
+            holder.botIcon.setVisibility(View.INVISIBLE);
         }
 
     }
@@ -51,10 +62,12 @@ public class RVAMessage extends RecyclerView.Adapter<RVAMessage.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView mMessage;
         TextView mBotMessage;
+        TextView botIcon;
         ViewHolder(View itemView) {
             super(itemView);
             mMessage = itemView.findViewById(R.id.tv_message);
             mBotMessage = itemView.findViewById(R.id.tv_bot_message);
+            botIcon = itemView.findViewById(R.id.botIcon);
         }
 
     }

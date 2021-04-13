@@ -23,25 +23,25 @@ import java.util.Map;
 
 public class ChatPageActivity extends AppCompatActivity {
 
-    EditText message;
+    EditText txtMessage;
     RecyclerView mRecyclerView;
     List<MessageData> mMessageData = new ArrayList<>();
     RVAMessage mAdapter;
+    LinearLayoutManager mLinearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_page);
 
-        message = findViewById(R.id.et_message);
+        txtMessage = findViewById(R.id.et_message);
         mRecyclerView = findViewById(R.id.rv_messages);
 
-        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this,
+        mLinearLayoutManager = new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL, false);
-        mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,
-                DividerItemDecoration.VERTICAL));
+
+        mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
         MessageData message = new MessageData("Yo what's good", "Bot");
         mMessageData.add(message);
@@ -51,7 +51,35 @@ public class ChatPageActivity extends AppCompatActivity {
 
     }
 
-    public void respond (View v){
+    public void send (View v){
 
+        MessageData message = new MessageData(txtMessage.getText().toString(), "user");
+        mMessageData.add(message);
+
+        txtMessage.setText("");
+
+        mAdapter = new RVAMessage(this, mMessageData);
+
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.scrollToPosition(mAdapter.getItemCount()-1);
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                botResponse();
+            }
+        }, 2000);
+
+    }
+
+    public void botResponse() {
+        MessageData message = new MessageData("Great! Are you using the breathing techniques I taught you?", "Bot");
+        mMessageData.add(message);
+
+        mAdapter = new RVAMessage(this, mMessageData);
+        mRecyclerView.setAdapter(mAdapter);
+
+        mRecyclerView.scrollToPosition(mAdapter.getItemCount()-1);
     }
 }
