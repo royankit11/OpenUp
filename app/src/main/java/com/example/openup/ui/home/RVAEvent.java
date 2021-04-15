@@ -47,6 +47,8 @@ public class RVAEvent extends RecyclerView.Adapter<RVAEvent.ViewHolder> {
         images.put(2, R.drawable.women_pic2);
         images.put(3, R.drawable.women_pic3);
         images.put(4, R.drawable.women_pic4);
+        images.put(5, R.drawable.women_pic5);
+        images.put(6, R.drawable.women_pic6);
 
         holder.mName.setText(mData.get(position).getmHost());
         holder.mTime.setText(mData.get(position).getmTime());

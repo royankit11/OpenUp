@@ -1,7 +1,9 @@
 package com.example.openup;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -18,8 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class NavigationActivity extends AppCompatActivity {
 
-    RecyclerView mRecyclerView;
-    List<ChatData> mChatData = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,10 @@ public class NavigationActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        BadgeDrawable badge = navView.getOrCreateBadge(R.id.navigation_notifications);
+        badge.setVisible(true);
+        badge.setBackgroundColor(Color.RED);
 
 
     }

@@ -42,6 +42,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.mDetails.setText(mData.get(position).getmDetails());
         holder.mTime.setText(mData.get(position).getmTime());
         String iconTxt = mData.get(position).getmSender().substring(0, 1);
+
+        if(mData.get(position).getmSender().equals("Sam")) {
+            holder.mNotify.setVisibility(View.VISIBLE);
+        }
         holder.mIcon.setText(iconTxt);
 
         Random mRandom = new Random();
@@ -67,6 +71,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         TextView mDetails;
         TextView mTime;
         TextView mIcon;
+        TextView mNotify;
         OnChatListener onChatListener;
 
         ViewHolder(View itemView, OnChatListener onChatListener) {
@@ -75,6 +80,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             mSender = itemView.findViewById(R.id.tvSender);
             mDetails = itemView.findViewById(R.id.tvDetails);
             mTime = itemView.findViewById(R.id.tvTime);
+            mNotify = itemView.findViewById(R.id.tvNotify);
             this.onChatListener = onChatListener;
 
             itemView.setOnClickListener(this);

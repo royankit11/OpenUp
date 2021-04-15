@@ -1,94 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:background="#90f09d">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="30dp">
+
+        <TextView
+            android:id="@+id/tvRName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Name"
+            android:fontFamily="@font/hammersmithone"
+            android:textColor="@color/navy"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvRHost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Host"
+            android:fontFamily="@font/hammersmithone"
+            android:textColor="@color/navy"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvRLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Link"
+            android:fontFamily="@font/hammersmithone"
+            android:textColor="@color/navy"
+            android:autoLink="web"
+            android:textColorLink="@android:color/holo_blue_dark"
+            android:linksClickable="true"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_marginStart="30dp">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvRDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="30dp">
+            android:fontFamily="@font/hammersmithone"
+            android:textColor="@color/navy"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="right"
+            android:layout_marginEnd="50dp"
+            android:text="Date" />
 
-            <TextView
-                android:id="@+id/tvRName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Name"
-                android:fontFamily="@font/hammersmithone"
-                android:textColor="@color/navy"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvRHost"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Host"
-                android:fontFamily="@font/hammersmithone"
-                android:textColor="@color/navy"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvRLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Link"
-                android:fontFamily="@font/hammersmithone"
-                android:textColor="@color/navy"
-                android:autoLink="web"
-                android:textColorLink="@android:color/holo_blue_dark"
-                android:linksClickable="true"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvRTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="30dp">
-
-            <TextView
-                android:id="@+id/tvRDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/hammersmithone"
-                android:textColor="@color/navy"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="5dp"
-                android:text="Date" />
-
-            <TextView
-                android:id="@+id/tvRTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/hammersmithone"
-                android:textColor="@color/navy"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="5dp"
-                android:text="Time" />
-
-
-        </LinearLayout>
+            android:fontFamily="@font/hammersmithone"
+            android:textColor="@color/navy"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="right"
+            android:layout_marginEnd="50dp"
+            android:text="Time" />
 
 
     </LinearLayout>
 
-
-
-
-
-</LinearLayout>
+</RelativeLayout>
