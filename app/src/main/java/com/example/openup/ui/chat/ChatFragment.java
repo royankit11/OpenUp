@@ -50,33 +50,6 @@ public class ChatFragment extends Fragment implements MyRecyclerViewAdapter.OnCh
         mChat = new ChatData("Janet", "I hope you are doing ok",
                 "3:44pm");
         mChatData.add(mChat);
-        mChat = new ChatData("Janet", "I hope you are doing ok",
-                "3:44pm");
-        mChatData.add(mChat);
-        mChat = new ChatData("Janet", "I hope you are doing ok",
-                "3:44pm");
-        mChatData.add(mChat);
-        mChat = new ChatData("Janet", "I hope you are doing ok",
-                "3:44pm");
-        mChatData.add(mChat);
-        mChat = new ChatData("Janet", "I hope you are doing ok",
-                "3:44pm");
-        mChatData.add(mChat);
-        mChat = new ChatData("Janet", "I hope you are doing ok",
-                "3:44pm");
-        mChatData.add(mChat);
-        mChat = new ChatData("Janet", "I hope you are doing ok",
-                "3:44pm");
-        mChatData.add(mChat);
-        mChat = new ChatData("Janet", "I hope you are doing ok",
-                "3:44pm");
-        mChatData.add(mChat);
-        mChat = new ChatData("Janet", "I hope you are doing ok",
-                "3:44pm");
-        mChatData.add(mChat);
-        mChat = new ChatData("Janet", "I hope you are doing ok",
-                "3:44pm");
-        mChatData.add(mChat);
 
 
 

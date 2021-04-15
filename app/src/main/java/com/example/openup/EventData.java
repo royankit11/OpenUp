@@ -2,21 +2,24 @@ package com.example.openup;
 
 public class EventData {
 
-    private String mHost;
+    private String mName;
     private String mTime;
-    private String mImage;
+    private int mImage;
 
-    public EventData(String mHost, String mTime) {
-        this.mHost = mHost;
+    public EventData(String mName, String mTime, int mImage) {
+        this.mName = mName;
         this.mTime = mTime;
+        this.mImage = mImage;
     }
 
     public String getmHost() {
-        return mHost;
+        return mName;
     }
 
     public String getmTime() {
         return mTime;
     }
+
+    public int getmImage() { return mImage; }
 
 }

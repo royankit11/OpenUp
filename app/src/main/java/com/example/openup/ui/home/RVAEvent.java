@@ -6,13 +6,16 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.openup.ChatData;
 import com.example.openup.EventData;
 import com.example.openup.R;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import androidx.annotation.NonNull;
@@ -37,8 +40,17 @@ public class RVAEvent extends RecyclerView.Adapter<RVAEvent.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.mHost.setText(mData.get(position).getmHost());
+
+        Map<Integer, Integer> images = new HashMap<>();
+
+        images.put(1, R.drawable.women_pic1);
+        images.put(2, R.drawable.women_pic2);
+        images.put(3, R.drawable.women_pic3);
+        images.put(4, R.drawable.women_pic4);
+
+        holder.mName.setText(mData.get(position).getmHost());
         holder.mTime.setText(mData.get(position).getmTime());
+        holder.backgroundImage.setImageResource(images.get(mData.get(position).getmImage()));
 
     }
 
@@ -55,12 +67,14 @@ public class RVAEvent extends RecyclerView.Adapter<RVAEvent.ViewHolder> {
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView mHost;
+        TextView mName;
         TextView mTime;
+        ImageView backgroundImage;
         ViewHolder(View itemView) {
             super(itemView);
-            mHost = itemView.findViewById(R.id.tvHost);
+            mName = itemView.findViewById(R.id.tvName);
             mTime = itemView.findViewById(R.id.tvDatetime);
+            backgroundImage = itemView.findViewById(R.id.backgroundImage);
         }
 
     }
