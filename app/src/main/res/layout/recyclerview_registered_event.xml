@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="120dp"
     android:orientation="vertical"
-    android:background="@color/mint">
+    android:background="#90f09d">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_marginStart="30dp">
 
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/tvRName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -30,7 +30,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvHost"
+                android:id="@+id/tvRHost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -39,6 +39,19 @@
                 android:textColor="@color/navy"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvRLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Link"
+                android:fontFamily="@font/hammersmithone"
+                android:textColor="@color/navy"
+                android:autoLink="web"
+                android:textColorLink="@android:color/holo_blue_dark"
+                android:linksClickable="true"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -49,43 +62,25 @@
             android:layout_marginStart="30dp">
 
             <TextView
-                android:id="@+id/tvTime"
+                android:id="@+id/tvRDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/hammersmithone"
                 android:textColor="@color/navy"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="100dp"
+                android:layout_marginStart="5dp"
+                android:text="Date" />
+
+            <TextView
+                android:id="@+id/tvRTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/hammersmithone"
+                android:textColor="@color/navy"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
                 android:text="Time" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnRegister"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="100dp"
-                android:background="@drawable/btn"
-                android:fontFamily="@font/hammersmithone"
-                android:textColor="#4dc484"
-                android:text="Register"
-                android:paddingTop="5dp"
-                android:textAlignment="center"
-                android:textSize="15sp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnUnRegister"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="100dp"
-                android:background="#cfcbc0"
-                android:fontFamily="@font/hammersmithone"
-                android:textColor="#6e6c66"
-                android:text="Registered"
-                android:paddingTop="5dp"
-                android:textAlignment="center"
-                android:visibility="invisible"
-                android:textSize="15sp" />
 
         </LinearLayout>
 
