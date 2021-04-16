@@ -265,9 +265,10 @@ public class CalendarFragment extends Fragment {
 
                                 long millis = objDate.getTime();
 
-
-                                Event ev1 = new Event(Color.RED, millis, "Name");
-                                calendarView.addEvent(ev1);
+                                if(calendarView.getEvents(millis).size() == 0) {
+                                    Event ev1 = new Event(Color.RED, millis, "Name");
+                                    calendarView.addEvent(ev1);
+                                }
 
                             } else {
                                 Toast.makeText(getContext(), error, Toast.LENGTH_LONG).show();

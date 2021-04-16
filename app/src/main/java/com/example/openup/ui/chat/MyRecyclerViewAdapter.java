@@ -1,6 +1,7 @@
 package com.example.openup.ui.chat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
@@ -9,7 +10,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.openup.ChatData;
+import com.example.openup.NavigationActivity;
 import com.example.openup.R;
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 import java.util.Random;
@@ -22,11 +26,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     private List<ChatData> mData;
     private LayoutInflater mInflater;
     private OnChatListener mOnChatListener;
+    Context context;
 
     // data is passed into the constructor
     MyRecyclerViewAdapter(Context context, List<ChatData> data, OnChatListener onChatListener) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
+        this.context = context;
         this.mOnChatListener = onChatListener;
     }
 
@@ -88,6 +94,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         @Override
         public void onClick(View view) {
+            mNotify.setVisibility(View.INVISIBLE);
             onChatListener.onChatClick(getAdapterPosition());
         }
     }

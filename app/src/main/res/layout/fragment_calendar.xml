@@ -54,6 +54,7 @@
             app:compactCalendarTextSize="15sp"
             app:compactCalendarBackgroundColor="#FFFFFF"
             app:compactCalendarTextColor="@color/navy"
+            app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="false"
             app:compactCalendarCurrentSelectedDayTextColor="@android:color/white"
             app:compactCalendarCurrentSelectedDayBackgroundColor="@color/black"
             app:compactCalendarCurrentDayBackgroundColor="#E57373"

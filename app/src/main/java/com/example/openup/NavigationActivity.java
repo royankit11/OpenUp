@@ -1,14 +1,19 @@
 package com.example.openup;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
 
+import com.example.openup.ui.chat.ChatFragment;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -20,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class NavigationActivity extends AppCompatActivity {
 
-
+    BadgeDrawable badge;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +40,11 @@ public class NavigationActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        BadgeDrawable badge = navView.getOrCreateBadge(R.id.navigation_notifications);
-        badge.setVisible(true);
+        badge = navView.getOrCreateBadge(R.id.navigation_notifications);
+
         badge.setBackgroundColor(Color.RED);
+
+        badge.setVisible(true);
 
 
     }

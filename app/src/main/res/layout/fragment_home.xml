@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:text="Start a chat"
         android:backgroundTint="@color/black"
-        android:textColor="@color/mint"
+        android:textColor="@color/white"
         android:scaleType="center"
         android:textSize="15sp"
         app:layout_anchor="@id/scrollView"

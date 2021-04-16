@@ -130,11 +130,8 @@ public class LoginActivity extends AppCompatActivity {
             };
         }
         private void bringToHomePage (String jsonUsername, String firstName, String lastName, Integer id) {
-            /*SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
-            prefs.edit().putString("ClientUsername", jsonUsername).apply();
-            prefs.edit().putBoolean("IsClientLoggedIn", true).apply();
-            prefs.edit().putString("UserEmail", email).apply();
-            prefs.edit().putInt("ClientID", id).apply();*/
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+            prefs.edit().putBoolean("IsLoggedIn", true).apply();
 
             Toast.makeText(LoginActivity.this, "Successfully logged in!", Toast.LENGTH_SHORT).show();
 
