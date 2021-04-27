@@ -38,6 +38,15 @@
                     android:layout_marginStart="-5dp"
                     android:textColor="@color/navy"
                     android:textSize="50sp" />
+
+                <ImageButton
+                    android:id="@+id/btnLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logout"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/transparent"/>
             </LinearLayout>
 
             <TextView
@@ -45,8 +54,19 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/hammersmithone"
                 android:textColor="@color/navy"
+                android:text="Supporting women suffering from domestic violence"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/hammersmithone"
+                android:textColor="@color/navy"
                 android:text="Upcoming Events"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginStart="20dp"
                 android:textSize="30sp" />
 

@@ -32,12 +32,14 @@ public class LoginActivity extends AppCompatActivity {
     String strUsername;
     String strPassword;
     RequestQueue requestQueue;
-    //AESCrypt aesCrypt;
+    AESCrypt aesCrypt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        aesCrypt = new AESCrypt();
 
         String urlTemp = getString(R.string.localhostURL);
         baseUrl = urlTemp + "getUser/";
@@ -47,15 +49,15 @@ public class LoginActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
     }
 
-    public void login(View v) {
+    public void login(View v) throws Exception {
 
         strUsername = String.valueOf(txtUsername.getText());
         strPassword = String.valueOf(txtPassword.getText());
 
         if(!strUsername.equals("")) {
             if(!strPassword.equals("")) {
-                //String strEncryptedPassword = aesCrypt.encrypt(strPassword);
-                String full_api_url = baseUrl + strUsername + "/" + strPassword + "/" + false;
+                String strEncryptedPassword = aesCrypt.encrypt(strPassword);
+                String full_api_url = baseUrl + strUsername + "/" + strEncryptedPassword + "/" + false;
                 new myAsyncTaskLogIn().execute(full_api_url);
             } else {
                 Toast.makeText(LoginActivity.this, "Provide password", Toast.LENGTH_LONG).show();

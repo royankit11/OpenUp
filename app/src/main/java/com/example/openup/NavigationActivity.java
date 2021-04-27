@@ -46,6 +46,26 @@ public class NavigationActivity extends AppCompatActivity {
 
         badge.setVisible(true);
 
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        navController.navigate(R.id.navigation_home);
+                        break;
+                    case R.id.navigation_dashboard:
+                        navController.navigate(R.id.navigation_dashboard);
+                        break;
+                    case R.id.navigation_notifications:
+                        badge.setVisible(false);
+                        navController.navigate(R.id.navigation_notifications);
+                        break;
+                }
+
+                return true;
+            }
+        });
 
     }
 

@@ -116,6 +116,8 @@ public class CalendarFragment extends Fragment {
 
         new myAsyncTaskGetAllEvents().execute(baseUrl);
 
+        calendarView.clearFocus();
+
         calendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
@@ -129,6 +131,15 @@ public class CalendarFragment extends Fragment {
 
                 String date = (month + 1) + "/" +day;
                 txtDate.setText(date);
+
+                Date currentTime = Calendar.getInstance().getTime();
+
+                if(currentTime.after(dateClicked)) {
+                    Toast.makeText(getContext(), "No events found", Toast.LENGTH_LONG).show();
+
+                    return;
+                }
+
 
                 String urlTemp = getString(R.string.localhostURL);
                 baseUrl = urlTemp + "getEvents/" +  (month + 1) + "/" + day + "/" + year;

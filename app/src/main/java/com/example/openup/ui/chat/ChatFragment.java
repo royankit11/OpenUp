@@ -1,7 +1,9 @@
 package com.example.openup.ui.chat;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.openup.ChatData;
 import com.example.openup.ChatPageActivity;
+import com.example.openup.LoginActivity;
 import com.example.openup.R;
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +46,7 @@ public class ChatFragment extends Fragment implements MyRecyclerViewAdapter.OnCh
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                 DividerItemDecoration.VERTICAL));
 
-        ChatData mChat = new ChatData("Sam", "Great news!",
+        ChatData mChat = new ChatData("Sam", "Hey, how are you doing?",
                 "10:42am");
         mChatData.add(mChat);
         mChat = new ChatData("Richie", "Sounds good!",

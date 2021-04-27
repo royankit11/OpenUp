@@ -1,12 +1,18 @@
 package com.example.openup.ui.home;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +33,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.openup.CalendarEventData;
 import com.example.openup.ChatPageActivity;
 import com.example.openup.EventData;
+import com.example.openup.LoginActivity;
 import com.example.openup.R;
 import com.example.openup.RegisteredEventData;
 import com.example.openup.ui.calendar.CalendarFragment;
@@ -55,6 +62,7 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
+
         mRecyclerView = root.findViewById(R.id.recyclerView);
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getContext(),
                 LinearLayoutManager.HORIZONTAL, false);
@@ -69,6 +77,17 @@ public class HomeFragment extends Fragment {
         mRecyclerView2.addItemDecoration(new DividerItemDecoration(getContext(),
                 DividerItemDecoration.VERTICAL));
 
+        ImageButton btn = root.findViewById(R.id.btnLogout);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+                prefs.edit().putBoolean("IsLoggedIn", false).apply();
+
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         requestQueue = Volley.newRequestQueue(getContext());
 
@@ -90,6 +109,8 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
         
         return root;
     }
@@ -201,8 +222,6 @@ public class HomeFragment extends Fragment {
                                 mRegisteredEventData.add(mRegisteredEvent);
 
 
-                            } else {
-                                Toast.makeText(getContext(), error, Toast.LENGTH_LONG).show();
                             }
                         }
                         RVARegisteredEvents mAdapter = new RVARegisteredEvents(getContext(), mRegisteredEventData);

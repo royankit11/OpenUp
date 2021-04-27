@@ -32,13 +32,15 @@ public class RegisterActivity extends AppCompatActivity {
     EditText txtLastName;
     String username;
     String id;
-    //AESCrypt aesCrypt;
+    AESCrypt aesCrypt;
     //boolean updateProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        aesCrypt = new AESCrypt();
 
         baseUrl = getString(R.string.localhostURL) + "Register/";
 
@@ -53,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
     }
 
-    public void registerNewUser(View view){
+    public void registerNewUser(View view) throws Exception {
 
         String strRegisterUsername = String.valueOf(txtUsernameReg.getText());
         String strRegisterPassword = String.valueOf(txtPasswordReg.getText());
@@ -64,8 +66,8 @@ public class RegisterActivity extends AppCompatActivity {
         if(!strRegisterUsername.equals("")) {
             if(!strRegisterPassword.equals("")) {
                 if(strRegisterPassword.equals(strPasswordConfirm)) {
-                    //String strEncryptedPassword = aesCrypt.encrypt(strRegisterPassword);
-                    String final_url = baseUrl + strRegisterUsername + "/" + strRegisterPassword + "/" + strFirstName + "/" +
+                    String strEncryptedPassword = aesCrypt.encrypt(strRegisterPassword);
+                    String final_url = baseUrl + strRegisterUsername + "/" + strEncryptedPassword + "/" + strFirstName + "/" +
                             strLastName;
 
                     new myAsyncTaskRegister().execute(final_url);
